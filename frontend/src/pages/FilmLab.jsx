@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const FilmLab = () => {
   const [showAllFaqs, setShowAllFaqs] = useState(false);
-  
+
   const faqs = [
     { q: "Do I need to submit a finished film?", a: "No. The Film Lab accepts story ideas at script stage — up to 20 pages. You don't need a completed film to apply. That's the entire point of the Lab." },
     { q: "How many projects will be selected?", a: "One project will be selected as the Shorts Cinemaghar Film Lab 2026 Winner." },
@@ -146,8 +146,8 @@ const FilmLab = () => {
           <h2 className="title-lg" style={{ textAlign: 'center', marginBottom: '3rem' }}>Frequently Asked Questions</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {faqs.map((faq, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`faq-item ${index < 4 || showAllFaqs ? 'expanded' : 'collapsed'}`}
               >
                 <div className="faq-content">
@@ -158,9 +158,9 @@ const FilmLab = () => {
             ))}
           </div>
           {faqs.length > 4 && (
-            <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-              <button 
-                className="btn btn-outline" 
+            <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+              <button
+                className="btn btn-outline"
                 onClick={() => setShowAllFaqs(!showAllFaqs)}
               >
                 {showAllFaqs ? 'Show Less' : 'Show More'}
