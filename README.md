@@ -4,104 +4,99 @@
 
 Shorts CinemaGhar is a platform designed to bring **filmmaking culture to campuses across India**. It connects students, filmmakers, and institutions through screenings, competitions, mentorship programs, and workshops.
 
-This repository contains the **official website for Shorts CinemaGhar**, which showcases programs, initiatives, and opportunities for collaboration.
+This project has been migrated from a static site to a full **MERN Stack** application.
 
 ---
 
-# 🚀 Features
+## 🛠 Tech Stack
 
-* Responsive landing page
-* About Shorts CinemaGhar initiative
-* Programs for colleges and schools
-* Film Lab information
-* Film submission portal
-* Gallery showcasing events
-* Partner collaboration section
-* Contact and partnership form
+* **Frontend**: React.js, React Router, Vite
+* **Backend**: Node.js, Express.js
+* **Database**: MongoDB (via Mongoose)
+* **Email Service**: Nodemailer (SMTP)
+* **Design**: Vanilla CSS with modern aesthetics
 
 ---
 
-# 🎓 What Shorts CinemaGhar Offers
-
-* Film screenings and competitions
-* Filmmaking workshops and masterclasses
-* Mentorship from industry professionals
-* National tour exposure powered by Short Film Tour
-* Digital distribution opportunities
-* Revenue-sharing for filmmakers
-
----
-
-# 🛠 Tech Stack
-
-This project is built using:
-
-* **HTML5**
-* **CSS3**
-* **JavaScript**
-* **Web Components**
-* **Vercel** for deployment
-
----
-
-# 📁 Project Structure
-
-Example structure of the project:
+## 📁 Project Structure
 
 ```
 ShortsCinemaGhar
 │
-├── index.html
-├── about.html
-├── programs.html
-├── college.html
-├── school.html
-├── film-lab.html
-├── submit.html
-├── gallery.html
-├── partners.html
-├── contact.html
+├── frontend/             # React Frontend (Vite)
+│   ├── src/
+│   │   ├── components/   # Reusable UI components
+│   │   ├── pages/        # Page views (Home, About, Submit, etc.)
+│   │   └── App.jsx       # Main application routing
+│   └── package.json
 │
-├── styles.css
-│
-├── components.js
-│
-├── assets/
-│   ├── images
-│   └── icons
+├── backend/              # Node.js Backend (Express)
+│   ├── config/           # Database and Email configurations
+│   ├── models/           # Mongoose schemas
+│   ├── routes/           # API endpoints
+│   ├── .env              # Environment variables
+│   └── server.js         # Entry point
 │
 └── README.md
 ```
 
 ---
 
-# 📦 Installation
+## 🚀 Getting Started
 
-Clone the repository:
+### 1. Prerequisite
+- Node.js installed
+- MongoDB URI (Atlas or local)
+- Gmail account with **App Password** (for email notifications)
 
-```bash
-git clone https://github.com/komal-kumawat/ShortsCinemaGhar.git
-```
+### 2. Backend Setup
+1. Go to the backend folder:
+   ```bash
+   cd backend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file and add the following:
+   ```env
+   PORT=3000
+   MONGO_URI=your-mongodb-uri
+   EMAIL_HOST=smtp.gmail.com
+   EMAIL_PORT=587
+   EMAIL_USER=your-email@gmail.com
+   EMAIL_PASS=your-gmail-app-password
+   RECEIVER_EMAIL=your-receiver-email@gmail.com
+   ```
+4. Start the server:
+   ```bash
+   npm run dev
+   ```
 
-Go to the project folder:
-
-```bash
-cd ShortsCinemaGhar
-```
-
-Open the project:
-
-```bash
-open index.html
-```
-
-Or run with **Live Server** in VS Code.
+### 3. Frontend Setup
+1. Go to the frontend folder:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
 ---
 
-# 🤝 Contributing
+## 📬 API Endpoints
 
-Contributions are welcome!
+- `POST /api/contact`: Saves a contact inquiry and sends an email notification.
+- `POST /api/submit`: Saves a film submission and sends an email notification.
+
+---
+
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a new branch
@@ -110,7 +105,7 @@ Contributions are welcome!
 
 ---
 
-# 📬 Contact
+## 📬 Contact
 
 📧 Email: [chetan@shortfilmtour.in](mailto:chetan@shortfilmtour.in)
 🌐 Website: [https://shorts-cinema-ghar.vercel.app/](https://shorts-cinema-ghar.vercel.app/)
