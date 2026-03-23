@@ -7,7 +7,8 @@ import Home from './pages/Home';
 // Placeholder components for pages we haven't built yet so routing doesn't break
 import About from './pages/About';
 import Programs from './pages/Programs';
-
+import SchoolsEdition from './pages/SchoolsEdition';
+import CollegeEdition from './pages/CollegeEdition';
 import FilmLab from './pages/FilmLab';
 
 import Submit from './pages/Submit';
@@ -24,6 +25,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="programs" element={<Programs />} />
+          <Route path="programs/schools" element={<SchoolsEdition />} />
+          <Route path="programs/colleges" element={<CollegeEdition />} />
           <Route path="film-lab" element={<FilmLab />} />
           <Route path="submit" element={<Submit />} />
           <Route path="gallery" element={<Gallery />} />

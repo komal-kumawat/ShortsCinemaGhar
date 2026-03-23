@@ -1,95 +1,122 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Programs = () => {
+  const revealRefs = useRef([]);
+  revealRefs.current = [];
+
+  const addToRefs = (el) => {
+    if (el && !revealRefs.current.includes(el)) {
+      revealRefs.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    revealRefs.current.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
-      <section className="page-header" style={{ paddingBottom: '2rem' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '1000px' }}>
+      <section className="page-header">
+        <div className="container reveal" ref={addToRefs}>
+          <p style={{ color: 'var(--film-red)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1.5rem', fontSize: '0.85rem' }}>Our Ecosystems</p>
           <h1 className="title-xl">
-            Choose the Program That <span className="text-red">Fits Your Campus</span>
+             One Mission. <span className="text-gradient">Two Ecosystems.</span><br />
+            Built for Every Stage.
           </h1>
-          <p style={{ fontSize: '1.25rem', marginTop: '1.5rem', lineHeight: '1.6' }}>
-            Three flexible packages. One goal — to make your campus the creative leader of your region. Start where you are. Scale as you grow.
+          <p style={{ fontSize: '1.25rem', marginTop: '2rem', lineHeight: '1.7', color: 'var(--text-secondary)', maxWidth: '900px', margin: '2rem auto 0' }}>
+            Shorts Cinemaghar runs structured film programs at two levels — discovering storytelling in schools and turning passion into career pathways in colleges.
           </p>
         </div>
       </section>
 
       <section className="pad-section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'stretch' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem', alignItems: 'stretch' }}>
             
-            {/* Package 1 - Base */}
-            <div className="value-card" style={{ display: 'flex', flexDirection: 'column' }}>
-              <div style={{ paddingBottom: '1.5rem', borderBottom: '1px solid var(--border-light)', marginBottom: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--text-main)' }}>Base Package</h3>
-                <p style={{ color: 'var(--film-red)', fontWeight: 600, fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Best for: First-time collaboration or Cultural Fest Integration</p>
+            <div className="value-card reveal" ref={addToRefs} style={{ display: 'flex', flexDirection: 'column', padding: '4rem 3rem' }}>
+              <div style={{ marginBottom: '2rem' }}>
+                <p style={{ color: 'var(--film-red)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1rem' }}>
+                  Classes VIII–XII
+                </p>
+                <h3 className="title-md" style={{ fontSize: '2.2rem' }}>Schools Edition</h3>
               </div>
-              <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.6', marginBottom: '2rem', flex: 1 }}>
-                Make your next cultural fest unforgettable. The Base Package brings curated short film screenings, an on-campus competition, jury recognition, institute branding across all creatives, and social media collaboration — all managed end-to-end by our team.
+              <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '3rem', flex: 1 }}>
+                A 4–6 week guided storytelling program where students create their first short film using just a mobile phone. No equipment, no grading pressure—just pure creativity.
               </p>
-              <div style={{ background: 'rgba(255,255,255,0.02)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--text-main)' }}>What Your Institute Earns</h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> Ticketed campus screenings</li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> Local sponsor placements</li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> Content assets for admissions marketing</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> Cultural prestige for your fest</li>
-                </ul>
-              </div>
+              <Link to="/programs/schools" className="btn btn-red" style={{ alignSelf: 'flex-start' }}>
+                Explore Schools Edition →
+              </Link>
             </div>
 
-            {/* Package 2 - Engagement */}
-            <div className="value-card" style={{ display: 'flex', flexDirection: 'column', borderColor: 'var(--film-red)', transform: 'scale(1.02)', boxShadow: '0 10px 30px rgba(229, 9, 20, 0.1)' }}>
-              <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', background: 'var(--film-red)', color: 'white', padding: '0.25rem 1rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Most Popular</div>
-              <div style={{ paddingBottom: '1.5rem', borderBottom: '1px solid rgba(229, 9, 20, 0.3)', marginBottom: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--text-main)' }}>Engagement Package</h3>
-                <p style={{ color: 'var(--film-red)', fontWeight: 600, fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Best for: Skill Development + NAAC-Aligned Activities</p>
+            <div className="value-card reveal" ref={addToRefs} style={{ display: 'flex', flexDirection: 'column', padding: '4rem 3rem', transitionDelay: '0.2s', borderColor: 'var(--gold)' }}>
+              <div style={{ marginBottom: '2rem' }}>
+                <p style={{ color: 'var(--gold)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1rem' }}>
+                  Higher Education
+                </p>
+                <h3 className="title-md" style={{ fontSize: '2.2rem' }}>College Edition</h3>
               </div>
-              <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.6', marginBottom: '2rem', flex: 1 }}>
-                Everything in the Base Package, plus 1–2 day filmmaking workshops, script and edit review sessions, mentor-led learning labs, a dedicated institute YouTube playlist, and up to 80% revenue share on digital premieres. This is where campuses go from hosting events to building real academic value.
+              <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '3rem', flex: 1 }}>
+                A year-round campus cinematic ecosystem with masterclasses, production labs, and national tour exposure. Built for serious creative career development.
               </p>
-              <div style={{ background: 'rgba(255,255,255,0.02)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--text-main)' }}>What Your Institute Earns</h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> YouTube ad revenue share</li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> Sponsored workshops</li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> Certification program fees</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> Stronger NAAC and placement narratives</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Package 3 - Premium */}
-            <div className="value-card" style={{ display: 'flex', flexDirection: 'column' }}>
-              <div style={{ paddingBottom: '1.5rem', borderBottom: '1px solid var(--border-light)', marginBottom: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--text-main)' }}>Premium Package</h3>
-                <p style={{ color: 'var(--film-red)', fontWeight: 600, fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Best for: Flagship Campus Branding + National Visibility</p>
-              </div>
-              <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.6', marginBottom: '2rem', flex: 1 }}>
-                Everything in the Engagement Package, plus a celebrity guest (physical or virtual), national tour entry for the winning film, multi-city screenings, digital distribution support, and brand activation with PR support. The winning film gets direct, fee-free entry to the Showcase International Short Film Festival in Krakow, Poland.
-              </p>
-              <div style={{ background: 'rgba(255,255,255,0.02)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--text-main)' }}>What Your Institute Earns</h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> Sponsorship deals & Ticketed public screenings</li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> Long-term digital content income</li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> Brand-backed cultural IP creation</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: 'var(--film-red)' }}>✔</span> International recognition</li>
-                </ul>
-              </div>
+              <Link to="/programs/colleges" className="btn btn-red" style={{ alignSelf: 'flex-start' }}>
+                Explore College Edition →
+              </Link>
             </div>
 
           </div>
         </div>
       </section>
 
-      <section className="pad-section" style={{ background: 'var(--bg-card)', borderTop: '1px solid var(--border-light)' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '1000px' }}>
-          <p style={{ fontSize: '1.35rem', marginBottom: '2rem', color: 'var(--text-main)', lineHeight: '1.6' }}>
-            This is not a cost. It's a revenue-generating cultural asset — one that improves placements, boosts admissions, and builds your campus's creative identity for years to come.
-          </p>
-          <Link to="/contact" className="btn btn-red" style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>Talk to Us About the Right Package for Your Campus →</Link>
+      <section className="pad-section glass" style={{ borderLeft: 'none', borderRight: 'none' }}>
+        <div className="container">
+          <div className="section-title-block reveal" ref={addToRefs} style={{ textAlign: 'center' }}>
+            <h2 className="title-lg">
+              Structured <span className="text-red">Creative Programs</span>
+            </h2>
+            <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '800px', margin: '1.5rem auto' }}>
+              We build something that lasts—a process, a community, and a creative identity for your institution.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+            <div className="reveal" ref={addToRefs}>
+              <h4 style={{ color: 'var(--film-red)', marginBottom: '1.5rem', fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Schools Edition Strategy</h4>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+                No professional equipment needed. No academic grading. Every student completes a film—not just the talented few. The journey matters more than the output.
+              </p>
+            </div>
+            <div className="reveal" ref={addToRefs} style={{ transitionDelay: '0.2s' }}>
+              <h4 style={{ color: 'var(--film-red)', marginBottom: '1.5rem', fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>College Edition Strategy</h4>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+                Industry mentors, national tour, and digital distribution. Students graduate with professional portfolios, networks, and real career pathways.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pad-section" style={{ textAlign: 'center' }}>
+        <div className="container reveal" ref={addToRefs} style={{ maxWidth: '900px' }}>
+          <h2 className="title-md" style={{ marginBottom: '3rem', lineHeight: '1.5' }}>
+            Bring the Shorts Cinemaghar experience<br />to your campus today.
+          </h2>
+          <div className="flex-center" style={{ gap: '2rem', flexWrap: 'wrap' }}>
+            <Link to="/contact" className="btn btn-red">Talk to us Today →</Link>
+          </div>
         </div>
       </section>
     </>
