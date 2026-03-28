@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logoImg from '../assets/SHORTS CINEMAGHAR (1).svg';
 
 const SiteHeader = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -25,18 +26,10 @@ const SiteHeader = () => {
   }, [location.pathname]);
 
   return (
-    <header className={`${scrolled ? 'scrolled' : ''}`}>
+    <header className={`${scrolled ? 'scrolled' : ''}`} style={{ paddingRight: 10 }} >
       <div className="container nav-container">
         <Link to="/" className="logo">
-          <div className="logo-icon">
-            <svg viewBox="0 0 40 40" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 10 L30 20 L10 30 Z" fill="white" />
-            </svg>
-          </div>
-          <div className="logo-text">
-            <span className="shorts">Shorts</span>
-            <span className="cinemaghar">Cinemaghar</span>
-          </div>
+          <img src={logoImg} alt="Shorts Cinemaghar Logo" className="logo-img" />
         </Link>
 
         <button
@@ -52,7 +45,7 @@ const SiteHeader = () => {
         <nav className={`nav-links ${menuActive ? 'active' : ''}`}>
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
           <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About</Link>
-          
+
           <div className="dropdown">
             <span className={`dropbtn ${location.pathname.startsWith('/programs') ? 'active' : ''}`}>
               Programs <span className="arrow">▼</span>
@@ -73,7 +66,7 @@ const SiteHeader = () => {
 
         <Link to="/contact" className="btn btn-red nav-cta">Join the Movement →</Link>
       </div>
-    </header>
+    </header >
   );
 };
 

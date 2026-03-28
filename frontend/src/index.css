@@ -4,12 +4,14 @@
     --bg-deep: #050505;
     --bg-surface: #0a0a0a;
     --bg-card: rgba(18, 18, 18, 0.7);
-    --film-red: #E50914; /* Netflix/Cinematic Red */
+    --film-red: #E50914;
+    /* Netflix/Cinematic Red */
     --film-red-hover: #ff1f2a;
     --film-red-glow: rgba(229, 9, 20, 0.5);
-    --gold: #D4AF37; /* For premium accents like Krakow */
+    --gold: #D4AF37;
+    /* For premium accents like Krakow */
     --gold-glow: rgba(212, 175, 55, 0.3);
-    
+
     --text-main: #ffffff;
     --text-secondary: #f4f4f5;
     --text-muted: #a1a1aa;
@@ -21,7 +23,7 @@
 
     --font-display: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
@@ -55,14 +57,29 @@ body {
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes glowPulse {
-    0% { box-shadow: 0 0 5px var(--film-red-glow); }
-    50% { box-shadow: 0 0 20px var(--film-red-glow); }
-    100% { box-shadow: 0 0 5px var(--film-red-glow); }
+    0% {
+        box-shadow: 0 0 5px var(--film-red-glow);
+    }
+
+    50% {
+        box-shadow: 0 0 20px var(--film-red-glow);
+    }
+
+    100% {
+        box-shadow: 0 0 5px var(--film-red-glow);
+    }
 }
 
 .reveal {
@@ -76,7 +93,10 @@ a {
     transition: var(--transition-smooth);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--font-display);
     line-height: 1.1;
     letter-spacing: -0.02em;
@@ -98,8 +118,14 @@ h1, h2, h3, h4 {
     font-weight: 600;
 }
 
-.text-red { color: var(--film-red); }
-.text-gold { color: var(--gold); }
+.text-red {
+    color: var(--film-red);
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
 .text-gradient {
     background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
     -webkit-background-clip: text;
@@ -130,19 +156,26 @@ h1, h2, h3, h4 {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 4rem; /* Increased for desktop */
+    padding: 0 4rem;
+    /* Increased for desktop */
 }
 
 @media (max-width: 1200px) {
-    .container { padding: 0 2rem; }
+    .container {
+        padding: 0 2rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .container { padding: 0 1.25rem; }
+    .container {
+        padding: 0 1.25rem;
+    }
 }
 
 @media (max-width: 400px) {
-    .container { padding: 0 1rem; }
+    .container {
+        padding: 0 1rem;
+    }
 }
 
 .pad-section {
@@ -150,25 +183,45 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
-    .pad-section { padding: 5rem 0; }
+    .pad-section {
+        padding: 5rem 0;
+    }
 }
 
-.grid-2, .grid-3, .grid-4 {
+.grid-2,
+.grid-3,
+.grid-4 {
     display: grid;
     gap: 3rem;
 }
 
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
 
 @media (max-width: 992px) {
-    .grid-3 { grid-template-columns: repeat(2, 1fr); }
-    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-    .grid-2, .grid-3, .grid-4 {
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
@@ -188,7 +241,8 @@ h1, h2, h3, h4 {
     cursor: pointer;
     transition: var(--transition-smooth);
     border: none;
-    border-radius: 4px; /* Slightly more modern than 8px */
+    border-radius: 4px;
+    /* Slightly more modern than 8px */
     position: relative;
     overflow: hidden;
 }
@@ -271,65 +325,29 @@ header.scrolled .nav-container {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-}
-
-.logo-icon {
-    background: var(--film-red);
-    border-radius: 6px;
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 20px var(--film-red-glow);
     transition: var(--transition-smooth);
 }
 
-header.scrolled .logo-icon {
-    width: 32px;
-    height: 32px;
+.logo-img {
+    height: 90px;
+    /* Adjust according to header padding */
+    width: auto;
+    filter: invert(1) brightness(1.2);
+    /* Make black logo content white */
+    transition: var(--transition-smooth);
 }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
+header.scrolled .logo-img {
+    height: 80px;
 }
 
-.logo-text .shorts {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.25rem;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-}
-
-.logo-text .cinemaghar {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--film-red);
-}
-
-@media (max-width: 450px) {
-    .logo {
-        gap: 0.5rem;
+@media (max-width: 576px) {
+    .logo-img {
+        height: 55px;
     }
 
-    .logo-icon {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .logo-text .shorts {
-        font-size: 1rem;
-    }
-    
-    .logo-text .cinemaghar {
-        font-size: 0.65rem;
+    header.scrolled .logo-img {
+        height: 45px;
     }
 
     .mobile-menu-btn {
@@ -472,6 +490,16 @@ header.scrolled .logo-icon {
     overflow: hidden;
 }
 
+@media (min-width: 992px) {
+    .page-header {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 .page-header p {
     color: var(--text-secondary);
     font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -494,6 +522,12 @@ header.scrolled .logo-icon {
     align-items: center;
     justify-content: center;
     min-height: 80vh;
+}
+
+@media (min-width: 992px) {
+    .hero {
+        min-height: 100vh;
+    }
 }
 
 .hero .title-xl {
@@ -523,19 +557,27 @@ header.scrolled .logo-icon {
 }
 
 .tagline {
-    display: inline-block; /* For capsule effect */
-    background: var(--film-red); /* Bold red capsule */
-    color: #fff; /* White text */
+    display: inline-block;
+    /* For capsule effect */
+    background: var(--film-red);
+    /* Bold red capsule */
+    color: #fff;
+    /* White text */
     padding: 0.5rem 1.5rem;
-    border-radius: 50px; /* Capsule shape */
+    border-radius: 50px;
+    /* Capsule shape */
     font-family: var(--font-display);
-    font-weight: 800; /* Bold */
+    font-weight: 800;
+    /* Bold */
     font-size: 0.9rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    margin-bottom: 3rem; /* Tagline margin-bottom: 3rem */
-    border: none; /* Tagline border: none */
-    box-shadow: 0 0 15px rgba(229, 9, 20, 0.5); /* Red shadow */
+    margin-bottom: 3rem;
+    /* Tagline margin-bottom: 3rem */
+    border: none;
+    /* Tagline border: none */
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+    /* Red shadow */
     transition: var(--transition-smooth);
 }
 
@@ -545,11 +587,13 @@ header.scrolled .logo-icon {
 }
 
 .text-gradient {
-    background: linear-gradient(to right, #fff, var(--film-red)); /* White-to-red gradient */
+    background: linear-gradient(to right, #fff, var(--film-red));
+    /* White-to-red gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: transparent; /* Fallback for browsers that don't support -webkit-text-fill-color */
+    color: transparent;
+    /* Fallback for browsers that don't support -webkit-text-fill-color */
 }
 
 .hero::before {
@@ -588,8 +632,10 @@ header.scrolled .logo-icon {
 .value-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 2px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
     background: linear-gradient(90deg, transparent, var(--film-red), transparent);
     transform: translateX(-100%);
     transition: var(--transition-smooth);
@@ -835,7 +881,10 @@ input[type=range]::-webkit-slider-runnable-track {
         grid-template-columns: repeat(2, 1fr);
         row-gap: 5rem;
     }
-    .timeline::before { display: none; }
+
+    .timeline::before {
+        display: none;
+    }
 }
 
 @media (max-width: 576px) {
@@ -844,7 +893,10 @@ input[type=range]::-webkit-slider-runnable-track {
         padding-left: 2rem;
         border-left: 2px solid var(--border-light);
     }
-    .timeline::before { display: none; }
+
+    .timeline::before {
+        display: none;
+    }
 }
 
 .step-card {
@@ -874,7 +926,8 @@ input[type=range]::-webkit-slider-runnable-track {
 
 @media (max-width: 576px) {
     .step-number {
-        left: -31px; /* Center on the vertical line */
+        left: -31px;
+        /* Center on the vertical line */
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
@@ -1078,7 +1131,7 @@ input[type=range]::-webkit-slider-runnable-track {
 
 @media (max-width: 480px) {
     .nav-container {
-        padding: 0 1rem;
+        padding: 0.1rem;
     }
 
     .hero-tagline {
@@ -1207,6 +1260,7 @@ input[type=range]::-webkit-slider-runnable-track {
         padding-left: 2rem;
     }
 }
+
 /* Program Specifics */
 /* Revenue Calculator */
 .calc-container {
@@ -1225,7 +1279,9 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 @media (max-width: 992px) {
-    .calc-grid { grid-template-columns: 1fr; }
+    .calc-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .calc-total {
@@ -1244,7 +1300,9 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 @media (max-width: 768px) {
-    .phase-grid { grid-template-columns: 1fr; }
+    .phase-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .phase-card {
@@ -1399,11 +1457,11 @@ input[type=range]::-webkit-slider-runnable-track {
         align-items: flex-start;
         gap: 2rem;
     }
-    
+
     .global-text-box {
         flex: 1 1 auto;
     }
-    
+
     .cta-btns .btn {
         width: 100%;
     }
