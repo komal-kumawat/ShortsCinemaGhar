@@ -100,7 +100,7 @@ const Contact = () => {
               </div>
 
               <div style={{ marginTop: '3rem', padding: '2rem', borderTop: '1px solid var(--border-light)' }}>
-                <p style={{ color: 'var(--text-dim)', marginBottom: '0.5rem' }}>Email: <a href="mailto:chetan@shortfilmtour.in" style={{ color: 'var(--film-red)' }}>chetan@shortfilmtour.in</a></p>
+                <p style={{ color: 'var(--text-dim)', marginBottom: '0.5rem' }}>Email: <a href="mailto:abhishek@shortfilmtour.in" style={{ color: 'var(--film-red)' }}>abhishek@shortfilmtour.in</a></p>
                 <p style={{ color: 'var(--text-dim)' }}>Social: @shortscinemaghar</p>
               </div>
             </div>
