@@ -33,37 +33,8 @@ const Gallery = () => {
 
   const gallerySections = [
     {
-      id: "media-coverage",
-      title: "Media Coverage",
-      subtitle: "What the press says about the movement.",
-      items: [
-        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.37 PM.jpg", delay: "0.1s" },
-        { src: "/assets/gallery/Media Coverage/Screenshot 2025-11-10 170124.png", delay: "0.2s" },
-        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.38 PM.jpg", delay: "0.3s" },
-        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.38 PM (1).jpg", delay: "0.4s" },
-        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.39 PM.jpg", delay: "0.1s" },
-        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-12 at 3.32.11 PM.jpg", delay: "0.2s" },
-        { src: "/assets/gallery/Media Coverage/Screenshot 2025-11-12 174732.png", delay: "0.3s" }
-      ]
-    },
-    {
-      id: "masterclass",
-      title: "Master Class Highlights",
-      subtitle: "Learning from the masters of the craft.",
-      items: [
-        { src: "/assets/gallery/Master class Highlights/Ishtiyak Khan Masterclass.mp4", delay: "0.1s" },
-        { src: "/assets/gallery/Master class Highlights/IMG_5331.JPG", delay: "0.2s" },
-        { src: "/assets/gallery/Master class Highlights/IMG_5333.JPG", delay: "0.3s" },
-        { src: "/assets/gallery/Master class Highlights/Felicitating Actor Isteyak Khan.PNG", delay: "0.4s" },
-        { src: "/assets/gallery/Master class Highlights/IMG_4815.JPG", delay: "0.1s" },
-        { src: "/assets/gallery/Master class Highlights/IMG_5128.JPG", delay: "0.2s" },
-        { src: "/assets/gallery/Master class Highlights/IMG_5951.JPG", delay: "0.3s" },
-        { src: "/assets/gallery/Master class Highlights/WhatsApp Image 2025-08-07 at 7.10.05 PM (1).jpeg", delay: "0.4s" }
-      ]
-    },
-    {
       id: "highlights",
-      title: "Shorts Cinema Ghar Day Highlights",
+      title: "Shorts CinemaGhar Day Highlights",
       subtitle: "The pure energy of the cinematic experience.",
       items: [
         { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_4873.MOV", delay: "0.1s" },
@@ -80,7 +51,39 @@ const Gallery = () => {
         { src: "/assets/gallery/Shorts Cinemaghar day Highlights/WhatsApp Image 2025-10-31 at 12.46.02 PM.jpeg", delay: "0.4s" },
         { src: "/assets/gallery/Shorts Cinemaghar day Highlights/WhatsApp Image 2025-11-10 at 11.38.18 AM (1).jpeg", delay: "0.1s" }
       ]
+    }
+    ,
+    {
+      id: "masterclass",
+      title: "Master Class Highlights",
+      subtitle: "Learning from the masters of the craft.",
+      items: [
+        { src: "/assets/gallery/Master class Highlights/Ishtiyak Khan Masterclass.mp4", delay: "0.1s" },
+        { src: "/assets/gallery/Master class Highlights/IMG_5331.JPG", delay: "0.2s" },
+        { src: "/assets/gallery/Master class Highlights/IMG_5333.JPG", delay: "0.3s" },
+        { src: "/assets/gallery/Master class Highlights/Felicitating Actor Isteyak Khan.PNG", delay: "0.4s" },
+        { src: "/assets/gallery/Master class Highlights/IMG_4815.JPG", delay: "0.1s" },
+        { src: "/assets/gallery/Master class Highlights/IMG_5128.JPG", delay: "0.2s" },
+        { src: "/assets/gallery/Master class Highlights/IMG_5951.JPG", delay: "0.3s" },
+        { src: "/assets/gallery/Master class Highlights/WhatsApp Image 2025-08-07 at 7.10.05 PM (1).jpeg", delay: "0.4s" }
+      ]
     },
+    {
+      id: "media-coverage",
+      title: "Media Coverage",
+      subtitle: "What the press says about the movement.",
+      items: [
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.37 PM.jpg", delay: "0.1s" },
+        { src: "/assets/gallery/Media Coverage/Screenshot 2025-11-10 170124.png", delay: "0.2s" },
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.38 PM.jpg", delay: "0.3s" },
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.38 PM (1).jpg", delay: "0.4s" },
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.39 PM.jpg", delay: "0.1s" },
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-12 at 3.32.11 PM.jpg", delay: "0.2s" },
+        { src: "/assets/gallery/Media Coverage/Screenshot 2025-11-12 174732.png", delay: "0.3s" }
+      ]
+    }
+    ,
+
     {
       id: "behind-scenes",
       title: "Behind the Scene",
