@@ -31,125 +31,64 @@ const Gallery = () => {
 
   const closeModal = () => setSelectedItem(null);
 
-  const galleryItems = [
+  const gallerySections = [
     {
-      title: "Behind the Scenes",
-      desc: "Creating cinematic magic on campus.",
-      src: "/assets/gallery/WhatsApp Video 2025-12-19 at 16.18.25.mp4",
-      type: "video",
-      delay: "0.1s"
+      id: "media-coverage",
+      title: "Media Coverage",
+      subtitle: "What the press says about the movement.",
+      items: [
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.37 PM.jpg", delay: "0.1s" },
+        { src: "/assets/gallery/Media Coverage/Screenshot 2025-11-10 170124.png", delay: "0.2s" },
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.38 PM.jpg", delay: "0.3s" },
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.38 PM (1).jpg", delay: "0.4s" },
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.39 PM.jpg", delay: "0.1s" },
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-12 at 3.32.11 PM.jpg", delay: "0.2s" },
+        { src: "/assets/gallery/Media Coverage/Screenshot 2025-11-12 174732.png", delay: "0.3s" }
+      ]
     },
     {
-      title: "Masterclass Highlights",
-      desc: "Our Founder with HOD Taha Siddiqui.",
-      src: "/assets/gallery/Our Founder with HOD Taha Siddiqui.PNG",
-      type: "image",
-      delay: "0.2s"
+      id: "masterclass",
+      title: "Master Class Highlights",
+      subtitle: "Learning from the masters of the craft.",
+      items: [
+        { src: "/assets/gallery/Master class Highlights/Ishtiyak Khan Masterclass.mp4", delay: "0.1s" },
+        { src: "/assets/gallery/Master class Highlights/IMG_5331.JPG", delay: "0.2s" },
+        { src: "/assets/gallery/Master class Highlights/IMG_5333.JPG", delay: "0.3s" },
+        { src: "/assets/gallery/Master class Highlights/Felicitating Actor Isteyak Khan.PNG", delay: "0.4s" },
+        { src: "/assets/gallery/Master class Highlights/IMG_4815.JPG", delay: "0.1s" },
+        { src: "/assets/gallery/Master class Highlights/IMG_5128.JPG", delay: "0.2s" },
+        { src: "/assets/gallery/Master class Highlights/IMG_5951.JPG", delay: "0.3s" },
+        { src: "/assets/gallery/Master class Highlights/WhatsApp Image 2025-08-07 at 7.10.05 PM (1).jpeg", delay: "0.4s" }
+      ]
     },
     {
-      title: "Guest Sessions",
-      desc: "Master Class by Actor Manurishi Chadda.",
-      src: "/assets/gallery/Master Class by Actor Manurishi Chadda.jpeg",
-      type: "image",
-      delay: "0.3s"
+      id: "highlights",
+      title: "Shorts Cinema Ghar Day Highlights",
+      subtitle: "The pure energy of the cinematic experience.",
+      items: [
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_4873.MOV", delay: "0.1s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_4863.MOV", delay: "0.2s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_4858.jpg", delay: "0.3s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_4908.PNG", delay: "0.4s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_4949.JPG", delay: "0.1s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_4963.PNG", delay: "0.2s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_4900.jpg", delay: "0.3s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_5473.PNG", delay: "0.4s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_5562.PNG", delay: "0.1s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/20251013_183947.jpg", delay: "0.2s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/IMG_4816.JPG", delay: "0.3s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/WhatsApp Image 2025-10-31 at 12.46.02 PM.jpeg", delay: "0.4s" },
+        { src: "/assets/gallery/Shorts Cinemaghar day Highlights/WhatsApp Image 2025-11-10 at 11.38.18 AM (1).jpeg", delay: "0.1s" }
+      ]
     },
     {
-      title: "Acting Workshop",
-      desc: "Ishtiyak Khan Masterclass session.",
-      src: "/assets/gallery/Ishtiyak Khan Masterclass.mp4",
-      type: "video",
-      delay: "0.4s"
-    },
-    {
-      title: "Campus Life",
-      desc: "Moments from our latest workshop.",
-      src: "/assets/gallery/WhatsApp Image 2025-08-07 at 7.10.05 PM (1).jpeg",
-      type: "image",
-      delay: "0.1s"
-    },
-    {
-      title: "Student Production",
-      desc: "Students getting hands-on with camera gear.",
-      src: "/assets/gallery/IMG_5562.PNG",
-      type: "image",
-      delay: "0.2s"
-    },
-    {
-      title: "Cinematography Prep",
-      desc: "Setting up for the perfect shot.",
-      src: "/assets/gallery/IMG_5473.PNG",
-      type: "image",
-      delay: "0.3s"
-    },
-    {
-      title: "Campus Screenings",
-      desc: "Bringing cinema directly to students.",
-      src: "/assets/gallery/IMG_5331.JPG",
-      type: "image",
-      delay: "0.1s"
-    },
-    {
-      title: "The Shorts Experience",
-      desc: "Immersive filmmaking workshops.",
-      src: "/assets/gallery/IMG_4963.PNG",
-      type: "image",
-      delay: "0.2s"
-    },
-    {
-      title: "Future Filmmakers",
-      desc: "Inspiring the next generation.",
-      src: "/assets/gallery/IMG_4908.PNG",
-      type: "image",
-      delay: "0.3s"
-    },
-    {
-      title: "Festival Vibes",
-      desc: "Celebrating creativity on campus.",
-      src: "/assets/gallery/IMG_4873.MOV",
-      type: "video",
-      delay: "0.1s"
-    },
-    {
-      title: "Hands-on Training",
-      desc: "Learning the craft by doing.",
-      src: "/assets/gallery/IMG_4863.MOV",
-      type: "video",
-      delay: "0.2s"
-    },
-    {
-      title: "Campus Engagement",
-      desc: "Interactive sessions with industry pros.",
-      src: "/assets/gallery/IMG_4822.JPG",
-      type: "image",
-      delay: "0.3s"
-    },
-    {
-      title: "Awards & Recognitions",
-      desc: "Felicitating Actor Isteyak Khan.",
-      src: "/assets/gallery/Felicitating Actor Isteyak Khan.PNG",
-      type: "image",
-      delay: "0.4s"
-    },
-    {
-      title: "Action Sequences",
-      desc: "Capturing the energy on set.",
-      src: "/assets/gallery/IMG_4816.JPG",
-      type: "image",
-      delay: "0.1s"
-    },
-    {
-      title: "Directing Workshop",
-      desc: "Developing vision through story.",
-      src: "/assets/gallery/IMG_4815.JPG",
-      type: "image",
-      delay: "0.2s"
-    },
-    {
-      title: "Cinematic Vision",
-      desc: "Exploring the language of film.",
-      src: "/assets/gallery/IMG_3858.JPG.jpeg",
-      type: "image",
-      delay: "0.3s"
+      id: "behind-scenes",
+      title: "Behind the Scene",
+      subtitle: "The magic that happens when the cameras start rolling.",
+      items: [
+        { src: "/assets/gallery/WhatsApp Video 2025-12-19 at 16.18.25.mp4", delay: "0.1s" },
+
+      ]
     }
   ];
 
@@ -164,46 +103,54 @@ const Gallery = () => {
               <span className="text-gradient">Comes Alive Looks Like</span>
             </h1>
             <p style={{ fontSize: '1.25rem', marginTop: '2rem', lineHeight: '1.7', color: 'var(--text-secondary)', maxWidth: '900px', margin: '2rem auto 0' }}>
-              From Dehradun to the next city — here's what happens when Shorts Cinemaghar arrives on campus. Real students. Real films. Real energy.
+              A movement that's transforming campuses across India through the lens of cinema.
             </p>
           </div>
         </section>
 
+        {gallerySections.map((section) => (
+          <section key={section.id} className="pad-section gallery-section">
+            <div className="container">
+              <div className="section-title-block reveal" ref={addToRefs}>
+                <h2 className="title-md text-gradient">{section.title}</h2>
+                <p style={{ color: 'var(--text-muted)', marginTop: '1rem' }}>{section.subtitle}</p>
+              </div>
+
+              <div className="gallery-grid">
+                {section.items.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="gallery-item reveal"
+                    ref={addToRefs}
+                    style={{ transitionDelay: item.delay }}
+                    onClick={() => setSelectedItem(item)}
+                  >
+                    {item.type === 'video' || item.src.match(/\.(mp4|MOV|mov|webm)$/) ? (
+                      <video
+                        src={item.src}
+                        className="gallery-img"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={item.src}
+                        alt=""
+                        className="gallery-img"
+                      />
+                    )}
+
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
+
         <section className="pad-section">
           <div className="container">
-            <div className="gallery-grid">
-              {galleryItems.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="gallery-item reveal"
-                  ref={addToRefs}
-                  style={{ transitionDelay: item.delay }}
-                  onClick={() => setSelectedItem(item)}
-                >
-                  {item.type === 'video' ? (
-                    <video
-                      src={item.src}
-                      className="gallery-img"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    />
-                  ) : (
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="gallery-img"
-                    />
-                  )}
-                  <div className="item-overlay">
-                    <h3 className="title-md" style={{ marginBottom: '0.3rem', fontSize: '1.25rem' }}>{item.title}</h3>
-                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem' }}>View Detail →</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
             <div className="cta-box reveal glass" ref={addToRefs}>
               <h2 className="title-md">"One campus proved the model. Fifty campuses will build a movement."</h2>
               <p className="cta-subtitle">Want this energy on your campus?</p>
@@ -219,15 +166,11 @@ const Gallery = () => {
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={closeModal}>&times;</button>
             <div className="media-container">
-              {selectedItem.type === 'video' ? (
+              {selectedItem.type === 'video' || selectedItem.src.match(/\.(mp4|MOV|mov|webm)$/) ? (
                 <video src={selectedItem.src} controls autoPlay className="lightbox-media" />
               ) : (
-                <img src={selectedItem.src} alt={selectedItem.title} className="lightbox-media" />
+                <img src={selectedItem.src} alt="" className="lightbox-media" />
               )}
-            </div>
-            <div className="lightbox-info">
-              <h3 className="title-md" style={{ color: '#fff', marginBottom: '0.5rem' }}>{selectedItem.title}</h3>
-              <p style={{ color: 'rgba(255,255,255,0.7)' }}>{selectedItem.desc}</p>
             </div>
           </div>
         </div>

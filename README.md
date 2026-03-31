@@ -107,6 +107,6 @@ ShortsCinemaGhar
 
 ## 📬 Contact
 
-📧 Email: [chetan@shortfilmtour.in](mailto:chetan@shortfilmtour.in)
+📧 Email: [info@shortfilmtour.in](mailto:info@shortfilmtour.in)
 🌐 Website: [https://shorts-cinema-ghar.vercel.app/](https://shorts-cinema-ghar.vercel.app/)
 📷 Instagram: @shortscinemaghar
