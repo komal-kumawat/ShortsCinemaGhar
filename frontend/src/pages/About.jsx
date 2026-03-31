@@ -102,15 +102,74 @@ const About = () => {
                 delay: "0.3s"
               }
             ].map((item, idx) => (
-              <div 
-                key={idx} 
-                className="value-card reveal" 
+              <div
+                key={idx}
+                className="value-card reveal"
                 ref={addToRefs}
                 style={{ transitionDelay: item.delay, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
               >
                 <div style={{ background: 'var(--film-red)', width: '40px', height: '2px' }}></div>
                 <h3 className="title-md" style={{ fontSize: '1.5rem' }}>{item.title}</h3>
                 <p style={{ color: 'var(--text-muted)', lineHeight: '1.7' }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Team Section */}
+      <section className="pad-section team-section" style={{ borderTop: '1px solid var(--border-light)' }}>
+        <div className="container">
+          <div className="section-title-block reveal" ref={addToRefs}>
+            <h2 className="title-lg">The <span className="text-red">Cinemaghar Circle</span></h2>
+            <p className="text-muted" style={{ marginTop: '1rem' }}>The visionaries building India's premier campus cinematic ecosystem.</p>
+          </div>
+
+          <div className="team-grid">
+            {[
+              {
+                name: "Arun Bais",
+                role: "Founder",
+                img: "/assets/gallery/The Cinemaghar Circle/Arun Bais - Founder.PNG",
+                delay: "0.1s"
+              },
+              {
+                name: "Abhishek Gupta",
+                role: "Co-Founder",
+                img: "/assets/gallery/The Cinemaghar Circle/Abhishek Gupta - Co-Founder.jpg",
+                delay: "0.2s"
+              },
+              {
+                name: "Chetan Upadhyay",
+                role: "Founding Member",
+                img: "/assets/gallery/The Cinemaghar Circle/Chetan Upadhyay - Founding Member_.jpg",
+                delay: "0.3s"
+              },
+              {
+                name: "Manuj Sharma",
+                role: "Founding Member",
+                img: "/assets/gallery/The Cinemaghar Circle/Manuj Sharma - Founding Member.jpg",
+                delay: "0.4s"
+              },
+              {
+                name: "Shweta Jain",
+                role: "Founding Member",
+                img: "/assets/gallery/The Cinemaghar Circle/Shweta Jain - Founding Member.jpeg",
+                delay: "0.5s"
+              }
+            ].map((member, idx) => (
+              <div
+                key={idx}
+                className="team-card glass reveal"
+                ref={addToRefs}
+                style={{ transitionDelay: member.delay }}
+              >
+                <div className="team-img-wrapper">
+                  <img src={member.img} alt={member.name} className="team-img" />
+                </div>
+                <div className="team-info">
+                  <h3 className="team-name">{member.name}</h3>
+                  <span className="team-role">{member.role}</span>
+                </div>
               </div>
             ))}
           </div>
