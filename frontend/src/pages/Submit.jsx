@@ -77,10 +77,10 @@ const Submit = () => {
       <section className="pad-section">
         <div className="container">
           <div className="grid-2" style={{ alignItems: 'flex-start', gap: '5rem' }}>
-            
+
             <div className="reveal" ref={addToRefs}>
               <h2 className="title-md" style={{ marginBottom: '2.5rem' }}>This Is Not Just a Screening.<br /><span className="text-red">It's a Platform.</span></h2>
-              
+
               <div style={{ display: 'grid', gap: '2rem' }}>
                 <div className="value-card">
                   <h4 style={{ color: 'var(--text-main)', marginBottom: '0.5rem' }}>Campus Screenings</h4>
@@ -96,7 +96,7 @@ const Submit = () => {
                   <h4 style={{ color: 'var(--text-main)', marginBottom: '0.5rem' }}>National Tour Entry</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Selected films tour multiple cities as part of the Short Film Tour network.</p>
                 </div>
-                
+
                 <div className="glass" style={{ padding: '2rem', borderLeft: '4px solid var(--gold)' }}>
                   <h4 style={{ color: 'var(--gold)', marginBottom: '0.5rem' }}>International Access</h4>
                   <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>Direct entry path for winners into the Showcase International Short Film Festival in Krakow, Poland.</p>
@@ -117,7 +117,7 @@ const Submit = () => {
 
             <div className="reveal glass" ref={addToRefs} style={{ padding: '3.5rem', borderRadius: '16px', transitionDelay: '0.2s' }}>
               <h3 className="title-md" style={{ marginBottom: '2.5rem' }}>Submit Your Film</h3>
-              
+
               {status === 'success' ? (
                 <div style={{ padding: '3rem 2rem', textAlign: 'center' }}>
                   <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(40, 167, 69, 0.2)', color: '#28a745', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem', fontSize: '1.5rem' }}>✓</div>
@@ -131,7 +131,7 @@ const Submit = () => {
                     <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-dim)', fontSize: '0.9rem' }}>Film Title *</label>
                     <input type="text" name="title" value={formData.title} onChange={handleChange} required className="form-input" placeholder="Enter film title" />
                   </div>
-                  
+
                   <div>
                     <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-dim)', fontSize: '0.9rem' }}>Director Name *</label>
                     <input type="text" name="director" value={formData.director} onChange={handleChange} required className="form-input" placeholder="Full name" />
@@ -165,7 +165,7 @@ const Submit = () => {
                   </div>
 
                   {status.startsWith('error') && <p style={{ color: 'var(--film-red)', fontSize: '0.9rem' }}>{status.replace('error: ', '')}</p>}
-                  
+
                   <button type="submit" className="btn btn-red" style={{ width: '100%', marginTop: '1rem' }} disabled={status === 'Submitting...'}>
                     {status === 'Submitting...' ? 'Processing...' : 'Submit to Shorts Cinemaghar'}
                   </button>
@@ -182,7 +182,7 @@ const Submit = () => {
             "We've placed student films on international festival stages. <span className="text-red">Yours could be next.</span>"
           </p>
           <p style={{ color: 'var(--text-dim)' }}>
-            Questions? Write to <a href="mailto:chetan@shortfilmtour.in" style={{ color: 'var(--film-red)' }}>chetan@shortfilmtour.in</a>
+            Questions? Write to <a href="mailto:info@shortfilmtour.in" style={{ color: 'var(--film-red)' }}>info@shortfilmtour.in</a>
           </p>
         </div>
       </section>
