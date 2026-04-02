@@ -153,6 +153,42 @@ const FilmLab = () => {
         </div>
       </section>
 
+      <section className="pad-section glass" style={{ borderLeft: 'none', borderRight: 'none' }}>
+        <div className="container">
+          <div className="section-title-block reveal" ref={addToRefs}>
+            <h2 className="title-lg">Meet the <span className="text-red">Jury</span></h2>
+            <p style={{ marginTop: '1.5rem', color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '800px', margin: '1.5rem auto 0' }}>
+              A panel of respected filmmakers, storytellers, and industry professionals will evaluate shortlisted submissions.
+              The jury brings expertise across direction, writing, production, and film festivals, ensuring that the most compelling and achievable story idea is selected.
+            </p>
+          </div>
+          
+          <div className="reveal" ref={addToRefs} style={{ textAlign: 'center', marginTop: '4rem' }}>
+            <div style={{ 
+              display: 'inline-block', 
+              padding: '2rem 4rem', 
+              border: '1px dashed var(--border-red)', 
+              borderRadius: '12px',
+              background: 'rgba(229, 9, 20, 0.02)'
+            }}>
+              <h3 style={{ 
+                fontFamily: 'var(--font-display)', 
+                fontSize: '1.5rem', 
+                color: 'var(--film-red)', 
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                margin: 0
+              }}>
+                Coming Soon...
+              </h3>
+              <p style={{ color: 'var(--text-dim)', marginTop: '0.5rem', fontSize: '0.9rem' }}>
+                Jury members will be announced soon.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="pad-section">
         <div className="container" style={{ maxWidth: '900px' }}>
           <div className="section-title-block reveal" ref={addToRefs}>

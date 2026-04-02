@@ -53,15 +53,18 @@ const Partners = () => {
                 <span style={{ height: '2px', width: '40px', background: 'var(--film-red)' }}></span>
                 Platform Partners
               </h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
-                <div className="value-card" style={{ height: '100%' }}>
-                  <h3 style={{ fontSize: '1.4rem', color: 'var(--text-main)', marginBottom: '1rem' }}>Short Film Tour</h3>
-                  <p style={{ color: 'var(--text-muted)' }}>India's first offline short film platform. The backbone of our national tour circuit and digital distribution network.</p>
-                </div>
-                <div className="value-card" style={{ height: '100%' }}>
-                  <h3 style={{ fontSize: '1.4rem', color: 'var(--text-main)', marginBottom: '1rem' }}>The Paperclip</h3>
-                  <p style={{ color: 'var(--text-muted)' }}>Building India’s first Research-to-Film Lab for Students & Independent Filmmakers.</p>
-                </div>
+              <div className="logo-grid">
+                {[
+                  { name: 'Short Film Tour', img: '/assets/gallery/our partners/SFT png (1).png' },
+                  { name: 'The Paperclip', img: '/assets/gallery/our partners/PaperClip.jpg' }
+                ].map((item, idx) => (
+                  <div key={idx} className="logo-item">
+                    <div className="logo-box">
+                      <img src={item.img} alt={item.name} className="logo-img" />
+                    </div>
+                    <span className="partner-name">{item.name}</span>
+                  </div>
+                ))}
               </div>
             </div>
 

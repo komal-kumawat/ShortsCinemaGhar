@@ -252,7 +252,8 @@ const CollegeEdition = () => {
                 name: 'Anubhav Sinha',
                 role: 'Director',
                 img: '/assets/gallery/Industry Mentors/Anubhav SInha.jpg',
-                delay: '0.1s'
+                delay: '0.1s',
+                position: 'center 45%' // Specifically for Anubhav Sinha to bring face down into frame
               },
               {
                 name: 'Mukesh S. Bhatt',
@@ -286,7 +287,12 @@ const CollegeEdition = () => {
                 style={{ transitionDelay: mentor.delay }}
               >
                 <div className="mentor-img-wrapper">
-                  <img src={mentor.img} alt={mentor.name} className="mentor-img" />
+                  <img 
+                    src={mentor.img} 
+                    alt={mentor.name} 
+                    className="mentor-img" 
+                    style={{ objectPosition: mentor.position || 'center top' }}
+                  />
                 </div>
                 <div className="mentor-info">
                   <h3 className="mentor-name">{mentor.name}</h3>
