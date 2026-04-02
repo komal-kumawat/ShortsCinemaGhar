@@ -77,7 +77,7 @@ const Gallery = () => {
         { src: "/assets/gallery/Media Coverage/Screenshot 2025-11-10 170124.png", delay: "0.2s" },
         { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.38 PM.jpg", delay: "0.3s" },
         { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.38 PM (1).jpg", delay: "0.4s" },
-        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.39 PM.jpg", delay: "0.1s" },
+        { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-10 at 2.56.39 PM.jpeg", delay: "0.1s" },
         { src: "/assets/gallery/Media Coverage/WhatsApp Image 2025-11-12 at 3.32.11 PM.jpg", delay: "0.2s" },
         { src: "/assets/gallery/Media Coverage/Screenshot 2025-11-12 174732.png", delay: "0.3s" }
       ]
@@ -114,7 +114,7 @@ const Gallery = () => {
         {gallerySections.map((section) => (
           <section key={section.id} className="pad-section gallery-section">
             <div className="container">
-              <div className="section-title-block reveal" ref={addToRefs}>
+              <div className="section-title-block reveal" ref={addToRefs} style={{ textAlign: 'center' }}>
                 <h2 className="title-md text-gradient">{section.title}</h2>
                 <p style={{ color: 'var(--text-muted)', marginTop: '1rem' }}>{section.subtitle}</p>
               </div>
@@ -142,6 +142,7 @@ const Gallery = () => {
                         src={item.src}
                         alt=""
                         className="gallery-img"
+                        style={section.id === 'media-coverage' ? { objectPosition: 'top' } : {}}
                       />
                     )}
 
