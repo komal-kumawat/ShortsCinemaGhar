@@ -55,7 +55,14 @@ const FilmLab = () => {
             A national short film incubation program designed to support filmmakers from concept to screen
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '3rem' }}>
-            <Link to="/submit" className="btn btn-red">Apply for the Grant →</Link>
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLScKhAaqSFva12ml9PwG3m4nVUT-axn-dxbPKXwHfzMJ1Da3Ng/viewform?usp=publish-editor" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-red"
+            >
+              Apply for the Grant →
+            </a>
             <p className="text-dim" style={{ fontSize: '0.9rem', maxWidth: '450px', textAlign: 'center', lineHeight: '1.6' }}>
               Open to emerging directors & film students. No completed film required—submit your <strong>script</strong>, not your footage.
             </p>
@@ -227,7 +234,14 @@ const FilmLab = () => {
           <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', marginBottom: '3rem', lineHeight: '1.8' }}>
             Every great film started as a simple idea and a script. Take the first step toward seeing your vision on the screen.
           </p>
-          <Link to="/submit" className="btn btn-red">Apply for the 2026 Grant</Link>
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLScKhAaqSFva12ml9PwG3m4nVUT-axn-dxbPKXwHfzMJ1Da3Ng/viewform?usp=publish-editor" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn-red"
+          >
+            Apply for the Grant
+          </a>
         </div>
       </section>
     </>
